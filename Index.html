@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kajal Special 😄</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      height: 85vh;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      transition: 0.8s ease;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Page Positions */
+    #page2 {
+      transform: translateX(100%);
+    }
+
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .hearts span {
+      position: absolute;
+      bottom: -50px;
+      font-size: 24px;
+      animation: rise 6s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-1000px); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Floating Hearts -->
+    <div class="hearts">
+      <span style="left:10%">❤️</span>
+      <span style="left:30%; animation-delay:1s">💖</span>
+      <span style="left:50%; animation-delay:2s">💕</span>
+      <span style="left:70%; animation-delay:3s">💘</span>
+      <span style="left:85%; animation-delay:4s">💝</span>
+    </div>
+
+    <!-- Page 1 -->
+    <div class="page" id="page1">
+      <h1>Hi Kajal 😍</h1>
+      <p>
+        You are so pretty… even mirror can’t justify your beauty ✨<br><br>
+        Let me show you one perfect picture of yours…
+      </p>
+      <button class="btn" onclick="nextPage()">Show Picture 📸</button>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page" id="page2">
+      <img src="monkey.png" alt="Monkey Picture" />
+      <h1>Oops… Wait 😂</h1>
+      <p>
+        Found your real picture finally 🐒💥<br><br>
+        Don’t be angry… still cute though 😜
+      </p>
+      <button class="btn" onclick="restart()">Start Again 🔄</button>
+    </div>
+
+  </div>
+
+  <script>
+    function nextPage() {
+      document.getElementById("page1").style.transform = "translateX(-100%)";
+      document.getElementById("page2").style.transform = "translateX(0%)";
+    }
+
+    function restart() {
+      document.getElementById("page1").style.transform = "translateX(0%)";
+      document.getElementById("page2").style.transform = "translateX(100%)";
+    }
+  </script>
+</body>
+</html>
